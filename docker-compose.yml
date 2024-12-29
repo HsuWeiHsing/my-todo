@@ -61,7 +61,6 @@ services:
             - sail
     mailpit:
         image: axllent/mailpit:v1.8
-
         ports:
             - 1025:1025
             - 8025:8025
