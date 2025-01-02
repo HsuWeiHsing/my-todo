@@ -16,6 +16,6 @@
         </style>
     </head>
     <body class="antialiased">
-      <hi>タスクアプリス</hi>
+      <hi>タスク</hi>
     </body>
 </html>
