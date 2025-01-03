@@ -10,5 +10,7 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     //
-    
+    public function create() {
+        return view('post.create');
+    }
 }
