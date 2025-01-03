@@ -16,6 +16,19 @@
         </style>
     </head>
     <body class="antialiased">
-      <hi>タスク</hi>
+      <hi>タスクアプリ</hi>
+      <div>
+        @foreach($tasks as $task)
+            {{  $task->task_name  }}
+        @endforeach 
+      </div>
+      <div>
+        <p>●タスク追加●</p>
+        <form action="">
+            <label for="task-name">タスク内容</label>
+            <textarea name="task_name" id="task-name"></textarea>
+            <button type="submit">追加</button>
+        </form>
+      </div>
     </body>
 </html>
