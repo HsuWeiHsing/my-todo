@@ -13,4 +13,8 @@ class TaskController extends Controller
     public function create() {
         return view('post.create');
     }
+
+    public function show() {
+        return view('create');
+    }
 }
