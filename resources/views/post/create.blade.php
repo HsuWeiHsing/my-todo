@@ -5,7 +5,8 @@
         </h2>
     </x-slot>
     <div class="max-w-7xl mx-auto px-6">
-      <form>
+      <form action="{{ route('store') }}" method="POST">
+        @csrf
         <div class="mt-8">
           <div class="w-full flex flex-col">
             <label for="task_name" class="font-semibold mt-4">タスク名</label>
@@ -15,8 +16,7 @@
 
         <div class="w-full flex flex-col">
           <label for="content" class="font-semibold mt-4">タスク詳細内容</label>
-          <textarea name="content" class="w-auto py-2 boder boder-gray-300 rounded-md" id="content" cols="30" rows="5">
-          </textarea>
+          <textarea name="content" class="w-auto py-2 boder boder-gray-300 rounded-md" id="content" cols="30" rows="5"></textarea>
         </div>
 
         <div class="mt-8">

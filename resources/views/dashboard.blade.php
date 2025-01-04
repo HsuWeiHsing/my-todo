@@ -9,5 +9,10 @@
         </div>
     </x-slot>
     
+    <div>
+        @foreach($tasks as $task)
+            {{ $task->task_name }}
+        @endforeach
+    </div>
 
 </x-app-layout>
