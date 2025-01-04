@@ -27,7 +27,9 @@ class TaskController extends Controller
         $task->importance_indication = $request->importance_indication;
         $task->save();
 
-        return redirect('/dashboard');
+        // return redirect('/dashboard');
+        
+        return back()->with('message', '保存しました。');
 
     }
 
