@@ -24,6 +24,15 @@ class TaskController extends Controller
             'task_status' => 'required',
             'severity_level' => 'required',
             'importance_indication' => 'required',
+        ],
+        [
+            'task_name.required' => 'タスク名は必ず入力してください。',
+            'content.required' => '詳細内容は必ず入力してください。',
+            'deadline.required' => '完成期限日は必ず入力してください。',
+            'category.required' => 'カテゴリーは必ず入力してください。',
+            'task_status.required' => 'ステータスは必ず入力してください。',
+            'severity_level.required' => '緊急度は必ず入力してください。',
+            'importance_indication.required' => '重要度は必ず入力してください。'
         ]);
         
         // $task = Task::create($validated);
@@ -47,4 +56,4 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('dashboard', compact('tasks'));
     }
-}
+}   
