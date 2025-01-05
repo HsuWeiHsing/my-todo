@@ -18,7 +18,7 @@ class TaskController extends Controller
 
         $validated = $request->validate([
             'task_name' => 'required | max:50',
-            'content' => 'required | max:200',
+            'content' => 'required | max:100000',
             'deadline' => 'required | max:50',
             'category' => 'required | max:50',
             'task_status' => 'required',
@@ -28,7 +28,7 @@ class TaskController extends Controller
         [
             'task_name.required' => 'タスク名は必ず入力してください。',
             'content.required' => '詳細内容は必ず入力してください。',
-            'deadline.required' => '完成期限日は必ず入力してください。',
+            'deadline.required' => '一番右のカレンダーマークをクリックし、期限日の選択してください。',
             'category.required' => 'カテゴリーは必ず入力してください。',
             'task_status.required' => 'ステータスは必ず入力してください。',
             'severity_level.required' => '緊急度は必ず入力してください。',
@@ -55,5 +55,10 @@ class TaskController extends Controller
     public function index() {
         $tasks = Task::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
         return view('dashboard', compact('tasks'));
+    }
+
+    public function show($id) {
+        $task = Task::find($id);
+        return view('post.show', compact('task'));
     }
 }   

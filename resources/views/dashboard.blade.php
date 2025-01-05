@@ -9,9 +9,12 @@
     </x-slot>
     <div class="mx-auto px-6">
         @foreach($tasks as $task)
-        <div class="mt-4 p-8 bg-white w-full rounded-2xl">
+          <div class="mt-4 p-8 bg-white w-full rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
-               ■{{ $task->task_name }}
+                件名：
+                  <a href="{{route('post.show', $task)}}" class="text-blue-600">
+                  ■{{ $task->task_name }}
+                  </a>
             </h1>
             <p class="p-4 text-lg font-semibold">
                 ☆カテゴリー：{{ $task->category}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -30,7 +33,7 @@
                     ◎タスク作成時間：{{ $task->created_at }} / ◎作成者：{{ $task->user->name }}
                 </p>
             </div>
-        </div>
+          </div>
         @endforeach
     </div>
 </x-app-layout>
