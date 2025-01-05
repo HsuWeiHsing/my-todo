@@ -13,12 +13,12 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('タスク一覧') }}
+                      <button class="px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-700">タスク一覧画面</button>
+                        <!-- {{ __('タスク一覧') }} -->
                     </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('/task/create')" :active="request()->routeIs('dashboard')">
-                        {{ __('タスク追加') }}
+                        <!-- {{ __('タスク追加') }} -->
+                        <button class="px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-700">タスク追加</button>
                     </x-nav-link>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="shadow-lg bg-violet-500 shadow-violet-500/50 text-white rounded px-2 py-1">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">

@@ -1,9 +1,9 @@
 <title>TODOリスト</title>
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-left text-2xl text-gray-800 leading-tight">
             {{ __('タスク一覧') }}
-        </h2>
+        </h1>
         <div class="font-semibold text-sm text-red-500 leading-tight">
             {{ __("ログイン中です。") }}
         </div>
@@ -13,7 +13,6 @@
           <div class="mt-4 p-8 bg-white w-full rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
                 ■タスク名：
-                  
                   {{ $task->task_name }}
                   </a>
             </h1>
@@ -27,7 +26,7 @@
             <hr class="w-full">
             <p class="mt-4 p-4">
                 <br>
-                {{ Str::limit($task->content, 80, '......') }}<br><br><br>
+                {!! nl2br(e(Illuminate\Support\Str::limit($task->content, 70, '......'))) !!}<br><br><br>
                 <a href="{{route('post.show', $task)}}" class="text-blue-500">詳細内容を読む</a>
             </p>
             <hr class="w-full">

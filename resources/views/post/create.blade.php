@@ -85,8 +85,8 @@
             </select>
           </div>
         </div>
-        
-        <x-primary-button class="mt-4">
+        <br>
+        <x-primary-button class="bg-gray-500 hover:bg-gray-400 text-white rounded px-6 py-6">
           送信する
         </x-primary-button>
       </form>
