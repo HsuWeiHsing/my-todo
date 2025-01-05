@@ -8,7 +8,7 @@
       <div class="bg-white w-full rounded-2xl">
         <div class="mt-4 p-4">
           <h1 class="text-lg font-semibold">
-            {{ $task->task_name }}
+            ■タスク名：{{ $task->task_name }}
           </h1>
           <hr class="w-full">
           <p class="mt-4 whitespace-pre-line">

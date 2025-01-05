@@ -35,7 +35,7 @@ Route::post('/store', [TaskController::class, 'store'])->name('store');
 
 Route::get('/dashboard', [TaskController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('task/show/{id}', [TaskController::class, 'show'])
+Route::get('/task/show/{id}', [TaskController::class, 'show'])
 ->name('post.show');
 
 require __DIR__.'/auth.php';

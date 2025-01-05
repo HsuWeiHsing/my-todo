@@ -30,7 +30,7 @@
 
         <div class="mt-8">
           <div class="w-full flex flex-col">
-            <label for="deadline" class="font-semibold mt-4">完成期限日</label>
+            <label for="deadline" class="font-semibold mt-4">完成期限日(右のマークをクリックし、選択してください。)</label>
             <x-input-error :messages="$errors->get('deadline')" class="mt-2" />
             <input type="datetime-local" {-webkit-appearance: none; height: 1em; }, name="deadline" class="w-auto py-2 boder boder-gray-300 rounded-md" id="deadline" 
             value="{{ old('deadline') }}">

@@ -1,3 +1,4 @@
+<title>TODOリスト</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
@@ -11,9 +12,9 @@
         @foreach($tasks as $task)
           <div class="mt-4 p-8 bg-white w-full rounded-2xl">
             <h1 class="p-4 text-lg font-semibold">
-                件名：
-                  <a href="{{route('post.show', $task)}}" class="text-blue-600">
-                  ■{{ $task->task_name }}
+                ■タスク名：
+                  
+                  {{ $task->task_name }}
                   </a>
             </h1>
             <p class="p-4 text-lg font-semibold">
@@ -25,7 +26,9 @@
             </p>
             <hr class="w-full">
             <p class="mt-4 p-4">
-                {{ $task->content }}
+                <br>
+                {{ Str::limit($task->content, 130, '......') }}<br><br><br>
+                <a href="{{route('post.show', $task)}}" class="text-blue-500">詳細内容を読む</a>
             </p>
             <hr class="w-full">
             <div class="p-4 text-sm font-semibold">
