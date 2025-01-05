@@ -17,10 +17,10 @@ class TaskController extends Controller
     public function store(Request $request) {
 
         $validated = $request->validate([
-            'task_name' => 'required',
-            'content' => 'required',
+            'task_name' => 'required | max:50',
+            'content' => 'required | max:200',
             'deadline' => 'required',
-            'category' => 'required',
+            'category' => 'required | max:50',
             'task_status' => 'required',
             'severity_level' => 'required',
             'importance_indication' => 'required',
@@ -35,7 +35,7 @@ class TaskController extends Controller
             'importance_indication.required' => '重要度は必ず入力してください。'
         ]);
         
-        // $task = Task::create($validated);
+        $validated['user_id'] = auth()->id();
 
         $task = new Task();
         $task->user_id = auth()->id();
@@ -53,7 +53,7 @@ class TaskController extends Controller
     }
 
     public function index() {
-        $tasks = Task::all();
+        $tasks = Task::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
         return view('dashboard', compact('tasks'));
     }
 }   

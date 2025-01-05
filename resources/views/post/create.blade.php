@@ -26,8 +26,7 @@
           <label for="content" class="font-semibold mt-4">タスク詳細内容</label>
           <x-input-error :messages="$errors->get('content')" class="mt-2" />
           <textarea name="content" class="w-auto py-2 boder boder-gray-300 rounded-md" id="content" cols="30" rows="5">   
-            {{ old('content') }}
-          </textarea>
+            {{ old('content') }}  </textarea>
         </div>
 
         <div class="mt-8">
@@ -53,8 +52,13 @@
             <label for="task_status" class="font-semibold mt-4">タスクステータス（着手中、完了、未着手、着手予定）
             </label>
             <x-input-error :messages="$errors->get('task_status')" class="mt-2" />
-            <input type="text" name="task_status" class="w-auto py-2 boder boder-gray-300 rounded-md" id="task_status"
+            <select type="text" name="task_status" class="w-auto py-2 boder boder-gray-300 rounded-md" id="task_status"
             value="{{ old('task_status') }}">
+              <option value="着手中">着手中</option>
+              <option value="完了">完了</option>
+              <option value="未着手">未着手</option>
+              <option value="着手予定">着手予定</option>
+            </select>
           </div>
         </div>
 
@@ -62,8 +66,12 @@
           <div class="w-full flex flex-col">
             <label for="severity_level" class="font-semibold mt-4">緊急度(高、中、低)</label>
             <x-input-error :messages="$errors->get('severity_level')" class="mt-2" />
-            <input type="text" name="severity_level" class="w-auto py-2 boder boder-gray-300 rounded-md" id="severity_level"
+            <select type="text" name="severity_level" class="w-auto py-2 boder boder-gray-300 rounded-md" id="severity_level"
             value="{{ old('severity_level') }}">
+              <option value="低">低</option>
+              <option value="中">中</option>
+              <option value="高">高</option>
+           </select>
           </div>
         </div>
 
@@ -71,7 +79,11 @@
           <div class="w-full flex flex-col">
             <label for="importance_indication" class="font-semibold mt-4">重要度(高、中、低)</label>
             <x-input-error :messages="$errors->get('importance_indication')" class="mt-2" />
-            <input type="text" name="importance_indication" class="w-auto py-2 boder boder-gray-300 rounded-md" id="importance_indication" value="{{ old('importance_indication') }}">
+            <select type="text" name="importance_indication" class="w-auto py-2 boder boder-gray-300 rounded-md" id="importance_indication" value="{{ old('importance_indication') }}">
+              <option value="低">低</option>
+              <option value="中">中</option>
+              <option value="高">高</option>
+            </select>
           </div>
         </div>
         
