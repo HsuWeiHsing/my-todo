@@ -27,13 +27,13 @@
             <hr class="w-full">
             <p class="mt-4 p-4">
                 <br>
-                {{ Str::limit($task->content, 130, '......') }}<br><br><br>
+                {{ Str::limit($task->content, 80, '......') }}<br><br><br>
                 <a href="{{route('post.show', $task)}}" class="text-blue-500">詳細内容を読む</a>
             </p>
             <hr class="w-full">
             <div class="p-4 text-sm font-semibold">
                 <p>
-                    ◎タスク作成時間：{{ $task->created_at }} / ◎作成者：{{ $task->user->name }}
+                    ◎作成時間：{{ $task->created_at }} 
                 </p>
             </div>
           </div>
