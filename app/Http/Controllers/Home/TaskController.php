@@ -19,7 +19,7 @@ class TaskController extends Controller
         $validated = $request->validate([
             'task_name' => 'required | max:50',
             'content' => 'required | max:200',
-            'deadline' => 'required',
+            'deadline' => 'required | max:50',
             'category' => 'required | max:50',
             'task_status' => 'required',
             'severity_level' => 'required',
