@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Illuminate\Pagination\Paginator;
 // use App\Models\User;
 
 class TaskController extends Controller
@@ -25,7 +26,7 @@ class TaskController extends Controller
             'severity_level' => 'required',
             'importance_indication' => 'required',
         ],
-        [
+        [   
             'task_name.required' => 'タスク名は必ず入力してください。',
             'content.required' => '詳細内容は必ず入力してください。',
             'deadline.required' => '一番右のカレンダーマークをクリックし、期限日の選択してください。',
@@ -53,7 +54,7 @@ class TaskController extends Controller
     }
 
     public function index() {
-        $tasks = Task::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        $tasks = Task::where('user_id', auth()->id())->orderBy('created_at', 'desc')->paginate(7);
         return view('dashboard', compact('tasks'));
     }
 
@@ -108,5 +109,4 @@ class TaskController extends Controller
         $task->delete();
         return redirect('dashboard')->with('message', '削除しました');
     }
-
 }   

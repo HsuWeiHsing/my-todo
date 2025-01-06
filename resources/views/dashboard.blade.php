@@ -15,11 +15,9 @@
             </div>
         @endif
         @foreach($tasks as $task)
-          <div class="mt-4 p-8 bg-white w-full rounded-2xl">
-            <h1 class="p-4 text-lg font-semibold">
-                ■タスク名：
-                  {{ $task->task_name }}
-                  </a>
+        <div class="mt-4 p-8 bg-white w-full rounded-2xl">
+            <h1 class="text-left p-4 text-lg font-semibold">
+                ■タスク名：{{ $task->task_name }}
             </h1>
             <p class="p-4 text-lg font-semibold">
                 ☆カテゴリー：{{ $task->category}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -30,17 +28,33 @@
             </p>
             <hr class="w-full">
             <p class="mt-4 p-4">
-                <br>
-                {!! nl2br(e(Illuminate\Support\Str::limit($task->content, 70, '......'))) !!}<br><br><br>
-                <a href="{{route('post.show', $task)}}" class="text-blue-500">詳細内容を読む</a>
+            <br>{{ Str::limit($task->content, 70, '......') }}<br><br><br>
+            <a href="{{route('post.show', $task)}}" class="text-blue-500">詳細内容を読む</a>
             </p>
             <hr class="w-full">
-            <div class="p-4 text-sm font-semibold">
-                <p>
-                    ◎作成時間：{{ $task->created_at }} 
-                </p>
+            <div class="text-left p-4 text-sm font-semibold">
+              <p>
+                ◎作成時間：{{ $task->created_at }} 
+              </p>
             </div>
-          </div>
-        @endforeach
+            <div class="text-right flex">
+                <a href="{{ route('edit', $task) }}" class="flex-1">
+                    <x-primary-button>
+                        内容編集
+                    </x-primary-button>
+                </a>
+                <form method="post" action="{{ route('destroy', $task) }}" class="flex-2">
+                    @csrf
+                    @method('delete')
+                    <x-primary-button class="bg-red-700 ml-2">
+                        タスク削除
+                    </x-primary-button>
+                </form>
+            </div>
+        </div>
+        @endforeach 
+    </div>
+    <div class="mb-4">
+        {{ $tasks->links()}}
     </div>
 </x-app-layout>
