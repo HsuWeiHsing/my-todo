@@ -15,6 +15,8 @@ https://my-todo-sigma-two.vercel.app/
 * CSS
 * MYSQL
 * Tailwind CSS
+* HTML
+* CSS
 
 ## アプリ機能一覧
 * 会員新規登録＆ログイン
