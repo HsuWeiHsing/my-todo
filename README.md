@@ -12,11 +12,11 @@ https://my-todo-sigma-two.vercel.app/
 ## 使用技術一覧
 * Laravel
 * PHP
+* HTML
 * CSS
 * MYSQL
 * Tailwind CSS
-* HTML
-* CSS
+
 
 ## アプリ機能一覧
 * 会員新規登録＆ログイン
@@ -26,9 +26,11 @@ https://my-todo-sigma-two.vercel.app/
 * タスクの削除
 * ページネーション
 
+
 ## 今後の実装予定
 * フィルター機能
 * コメント機能
+
 
 ## 開発環境
 * Windows 11
@@ -37,10 +39,12 @@ https://my-todo-sigma-two.vercel.app/
 * Laravel Sail
 * Docker Desktop
 
+
 ### その他
 * PHPMyAdmin
 * VSCode
 * GitHub
+
 
 ## データベース設計
 
