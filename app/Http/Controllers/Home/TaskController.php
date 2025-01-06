@@ -62,11 +62,12 @@ class TaskController extends Controller
         return view('post.show', compact('task'));
     }
 
-    public function edit(Task $task) {
+    public function edit($id) {
+        $task = Task::find($id);
         return view('post.edit', compact('task'));
     }
     
-    public function update(Request $request, Task $task) {
+    public function update(Request $request, $id) {
 
         $validated = $request->validate([
             'task_name' => 'required | max:50',
@@ -89,7 +90,7 @@ class TaskController extends Controller
         
         $validated['user_id'] = auth()->id();
         // $task->user_id = auth()->id();
-        
+        $task = Task::find($id);
         $task->user_id = auth()->id();
         $task->task_name = $validated['task_name'];
         $task->content = $validated['content'];
@@ -102,5 +103,10 @@ class TaskController extends Controller
         return back()->with('message', '更新しました。');
     }
     
+    public function destroy ($id) {
+        $task = Task::find($id);
+        $task->delete();
+        return redirect('dashboard')->with('message', '削除しました');
+    }
 
 }   

@@ -44,4 +44,7 @@ Route::get('/task/{id}/edit', [TaskController::class, 'edit'])
 Route::patch('/task/{id}', [TaskController::class, 'update'])
 ->name('update');
 
+Route::delete('/task/destroy/{id}', [TaskController::class, 'destroy'])
+->name('destroy');
+
 require __DIR__.'/auth.php';

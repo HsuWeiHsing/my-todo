@@ -10,15 +10,21 @@
           <h1 class="text-lg font-semibold">
             ■タスク名：{{ $task->task_name }}
           </h1>
-          <div class="text-right">
-              <a href="{{ route('edit', $task) }}">
+          <div class="text-right flex">
+              <a href="{{ route('edit', $task) }}" class="flex-1">
                   <x-primary-button>
                     内容編集
                   </x-primary-button>
               </a>
-          </div>        
-          
-          <button class="shadow-lg bg-green-500 shadow-green-500/50 text-white rounded px-2 py-1">タスク削除</button>
+              <form method="post" action="{{ route('destroy', $task) }}" class="flex-2">
+                @csrf
+                @method('delete')
+                <x-primary-button class="bg-red-700 ml-2">
+                  タスク削除
+                </x-primary-button>
+              </form>
+          </div>
+          <br>   
           <p class="text-sm font-semibold flex flex-row-reverse">
             ★カテゴリー：{{ $task->category }}&nbsp;&nbsp;/ 
             &nbsp;&nbsp;★デットライン：{{ $task->deadline }}&nbsp;&nbsp;
