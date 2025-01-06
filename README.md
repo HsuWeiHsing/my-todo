@@ -8,9 +8,7 @@ https://my-todo-sigma-two.vercel.app/
 メールアドレス：test@example.com
 パスワード：12345678
 ~~~
-
-
-
+<br>
 ## ■使用技術一覧
 * Laravel
 * PHP
