@@ -38,4 +38,10 @@ Route::get('/dashboard', [TaskController::class, 'index'])->middleware(['auth', 
 Route::get('/task/show/{id}', [TaskController::class, 'show'])
 ->name('post.show');
 
+Route::get('/task/{id}/edit', [TaskController::class, 'edit'])
+->name('edit');
+
+Route::patch('/task/{id}', [TaskController::class, 'update'])
+->name('update');
+
 require __DIR__.'/auth.php';

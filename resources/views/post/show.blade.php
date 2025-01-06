@@ -10,8 +10,14 @@
           <h1 class="text-lg font-semibold">
             ■タスク名：{{ $task->task_name }}
           </h1>
-          <br>
-          <button class="shadow-lg bg-green-500 shadow-green-500/50 text-white rounded px-2 py-1">内容編集</button>
+          <div class="text-right">
+              <a href="{{ route('edit', $task) }}">
+                  <x-primary-button>
+                    内容編集
+                  </x-primary-button>
+              </a>
+          </div>        
+          
           <button class="shadow-lg bg-green-500 shadow-green-500/50 text-white rounded px-2 py-1">タスク削除</button>
           <p class="text-sm font-semibold flex flex-row-reverse">
             ★カテゴリー：{{ $task->category }}&nbsp;&nbsp;/ 
