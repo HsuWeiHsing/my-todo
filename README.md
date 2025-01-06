@@ -1,15 +1,15 @@
-# To do アプリ
+# ★To do アプリ
 
-## アプリURL
+## ■アプリURL
 https://my-todo-sigma-two.vercel.app/
 
-### テストアカウント
+### ■テストアカウント
 ~~~
 メールアドレス：test@example.com
 パスワード：12345678
 ~~~
 
-## 使用技術一覧
+## ■使用技術一覧
 * Laravel
 * PHP
 * HTML
@@ -18,7 +18,7 @@ https://my-todo-sigma-two.vercel.app/
 * Tailwind CSS
 
 
-## アプリ機能一覧
+## ■アプリ機能一覧
 * 会員新規登録＆ログイン
 * タスクの追加
 * タスクの編集
@@ -27,12 +27,12 @@ https://my-todo-sigma-two.vercel.app/
 * ページネーション
 
 
-## 今後の実装予定
+## ■今後の実装予定
 * フィルター機能
 * コメント機能
 
 
-## 開発環境
+## ■開発環境
 * Windows 11
 * Laravel Framework 10.48.25
 * PHP 8.2.27
@@ -40,13 +40,13 @@ https://my-todo-sigma-two.vercel.app/
 * Docker Desktop
 
 
-### その他
+### ■その他
 * PHPMyAdmin
 * VSCode
 * GitHub
 
 
-## データベース設計
+## ■データベース設計
 
 * ER図
 ![alt text](image-1.png)
