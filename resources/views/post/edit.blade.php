@@ -11,7 +11,7 @@
           </div>
       @endif
       
-      <form method="post" action="{{ route('update', $task) }}">
+      <form method="post" action="{{ route('update', ['id'=>$task->id]) }}">
         @csrf
         @method('patch')
         <div class="mt-8">
